@@ -1,7 +1,9 @@
 
-.Notifications {
-	border: 3px solid var(--hred);
+#root-notifications {
+	margin-top: 50px;
+	border: 3px solid red;
 	padding: 6px 12px;
+	border-style: dashed;
 }
 
 li[data-priority="default"] {

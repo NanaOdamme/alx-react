@@ -14,10 +14,10 @@ export default function Notifications() {
 				fontWeight: 'bold',
 				background: 'none',
 				border: 'none',
-				fontSize: '15px',
+				fontSize: '12px',
 				position: 'absolute',
-				right: '2px',
-				top: '2px',
+				right: '40px',
+				top: '60px',
 				cursor: 'pointer',
 			}}
 			aria-label="Close"

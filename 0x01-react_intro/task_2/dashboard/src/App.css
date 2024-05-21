@@ -33,6 +33,11 @@ body {
   font-weight: bold;
   
 }
+.App-body form button{
+  margin-left: 10px;
+  background-color: transparent;
+  cursor: pointer;
+}
 
 .App-footer p {
 	text-align: center;
