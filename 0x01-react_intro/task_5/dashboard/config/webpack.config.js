@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -57,8 +58,14 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './dist/index.html',
+      minify: process.env.NODE_ENV === 'production' ? {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        removeComments: true,
+      } : false,
     }),
   ],
   devServer: {
@@ -69,6 +76,6 @@ module.exports = {
     port: 9000,
     hot: true,
   },
-  devtool: 'inline-source-map',
-  mode: 'development',
+  devtool: process.env.NODE_ENV === 'production' ? 'source-map' : 'inline-source-map',
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
 };
